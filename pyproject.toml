@@ -14,7 +14,7 @@ pick = "^2.2.0"
 hurry-filesize = "^0.9"
 
 [tool.poetry.scripts]
-rarbg-search = "rarbg_search.rarbg-search:search"
+rarbg-search = "rarbg-search.rarbg-search:search"
 
 [build-system]
 requires = ["poetry-core"]
