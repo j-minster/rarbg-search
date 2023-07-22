@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["j-minster <jack@minster.com.au>"]
 readme = "README.md"
-packages = [{include = "rarbg_search"}]
+packages = [{include = "rarbgsearch"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,7 +14,7 @@ pick = "^2.2.0"
 hurry-filesize = "^0.9"
 
 [tool.poetry.scripts]
-rarbg-search = "rarbg-search.rarbg-search:search"
+rarbgsearch = "rarbgsearch.rarbgsearch:search"
 
 [build-system]
 requires = ["poetry-core"]
