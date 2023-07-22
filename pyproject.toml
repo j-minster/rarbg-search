@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "rarbg-search"
+version = "0.1.0"
+description = ""
+authors = ["j-minster <jack@minster.com.au>"]
+readme = "README.md"
+packages = [{include = "rarbg_search"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+python-lsp-server = "^1.7.4"
+click = "^8.1.6"
+pick = "^2.2.0"
+hurry-filesize = "^0.9"
+
+[tool.poetry.scripts]
+rarbg-search = "rarbg_search.rarbg-search:search"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
