@@ -15,6 +15,12 @@ def to_magnet(row: tuple) -> str:
 
     return magnet_link
 
+def mysize(num):
+    if num is None:
+        return 0
+    else:
+        return size(num)
+
 @click.command()
 @click.argument("title", required=True)
 @click.argument("dbpath", required=False, default=r"./rarbg_db.sqlite")
@@ -38,11 +44,11 @@ def search(title: str, dbpath: str, noxxx: bool) -> None:
     rows = cursor.fetchall()
 
     prompt = 'Please choose a torrent to open: '
-    movie_titles = [(row[2], size(row[5])) for row in rows]
+    movie_titles = [(row[2], mysize(row[5])) for row in rows]
     option, index = pick(movie_titles, prompt)
 
-    if index:
-        os.system(f"open '{to_magnet(rows[index])}'")
+    if index >= 0:
+        os.system(f"echo '{to_magnet(rows[index])}' | pbcopy")
     else:
         print('no selection - connection aborted')
 
